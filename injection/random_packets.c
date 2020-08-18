@@ -112,7 +112,7 @@ int main(int argc, char** argv)
 		/* Get start time */
 		clock_gettime(CLOCK_MONOTONIC, &start);
 	}
-	for (i = 0; i < num_packets; ++i) {
+	for (i = 0; i < num_packets || !num_packets; ++i) {
 		payload_memcpy(packet->payload, packet_size,
 				(i*packet_size) % PAYLOAD_SIZE);
 
