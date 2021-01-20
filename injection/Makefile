@@ -2,7 +2,7 @@ CFLAGS = -O3 -Wall -static -Wno-unknown-pragmas
 LDLIBS = -lorcon -lm -lrt
 CC = gcc
 
-ALL = random_packets
+ALL = random_packets injector
 
 all: $(ALL)
 
@@ -10,6 +10,8 @@ clean:
 	rm -f *.o $(ALL)
 
 random_packets: random_packets.c util.o
+
+injector: injector.c
 
 util.c: util.h
 
